@@ -1,5 +1,4 @@
-# Repositório Template
-Repositório de Template para os projetos da disciplina 
+# Desafios de Busca - Leetcode
 ```
 Nome do Repositório (Apague este tópico)
   O nome do repositório deve seguir o padrão <TemaProjeto>_<Nome Projeto>.
@@ -18,9 +17,10 @@ Os temas de projeto são:
 ## Alunos  
 | Matrícula | Nome |  
 |-----------------------|---------------------|  
-| xx/xxxxxxx | xxxx xxxx xxxxx |  
-| xx/xxxxxxx | xxxx xxxx xxxxx |  
-## Descrição do projeto
+| 20/2046229 | Kallyne Macedo Passos |  
+| 20/0022199 | Leonardo Sobrinho de Aguiar |  
+
+<!-- ## Descrição do projeto
 Aqui você deve dizer o objetivo deste projeto e o que realmente foi feito neste repositório.
 ## Guia de instalação
 Aqui devem estar descritas as dependências do projeto (versões de linguagens e ferramentas) e as instruções necessárias para executar o projeto. 
@@ -34,3 +34,4 @@ Neste tópico você deve adicionar imagens do funcionamento do projeto.
 Aqui você diz se o algoritmo utilizado foi útil, se tem limitações, etc.
 ## Referências
 Caso tenha utilizado algum agoritmo como base, citar o mesmo devidamente para  evitar quaisquer denuncias de plágio.
+-->
