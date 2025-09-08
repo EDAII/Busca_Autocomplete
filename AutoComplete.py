@@ -1,8 +1,10 @@
+import pandas as pd
 class Node:
 
     # nó na Árvore AVL
-    def __init__(self, key):
+    def __init__(self, key, meaning):
         self.key = key
+        self.meaning = meaning # Significado da palavra
         self.left = None
         self.right = None
         self.height = 1 # altura de um novo nó
@@ -49,16 +51,16 @@ class AVLTree:
 
         return y
     
-    def insert(self, key):
-        self.root = self._insert_recursive(self.root, key)
+    def insert(self, key, meaning):
+        self.root = self._insert_recursive(self.root, key, meaning)
 
-    def _insert_recursive(self, root, key):
+    def _insert_recursive(self, root, key, meaning):
         if not root:
-            return Node(key)
+            return Node(key, meaning)
         elif key < root.key:
-            root.left = self._insert_recursive(root.left, key)
+            root.left = self._insert_recursive(root.left, key, meaning)
         else:
-            root.right = self._insert_recursive(root.right, key)
+            root.right = self._insert_recursive(root.right, key, meaning)
 
         root.height = 1 + max(self.getHeight(root.left), self.getHeight(root.right))
 
@@ -84,14 +86,15 @@ class AVLTree:
     # Lógica do Autocompletar
     def sugerir(self, prefixo, limite=10):
 
-        #retorna uma lista de palavras que começam com o prefixo
+        # Retorna uma lista de palavras que começam com o prefixo
         sugestoes = []
         if not self.root or not prefixo:
             return sugestoes
             
         self._coletar_sugestoes(self.root, prefixo, sugestoes, limite)
         return sugestoes
-    # navega na árvore e coleta as sugestões.
+    
+    # Navega na árvore e coleta as sugestões.
     def _coletar_sugestoes(self, node, prefixo, sugestoes, limite):
 
         if not node or len(sugestoes) >= limite:
@@ -108,23 +111,20 @@ class AVLTree:
             self._coletar_sugestoes(node.left, prefixo, sugestoes, limite)
 
             if len(sugestoes) < limite and node.key.startswith(prefixo):
-                sugestoes.append(node.key)
+                sugestoes.append({'palavra':node.key, 'significado':node.meaning})
 
             self._coletar_sugestoes(node.right, prefixo, sugestoes, limite)
 
 if __name__ == "__main__":
     dicionario_avl = AVLTree()
 
-    palavras = [
-        "algoritmo", "algotrading", "algebra", "algodao",
-        "programa", "processador", "projeto", "protocolo", "problema",
-        "python", "java", "javascript", "estrutura", "dado",
-        "arvore", "balanceada", "busca", "binaria"
-    ]
-    
+    caminho_do_arquivo = 'dicionario.csv'
+    palavras = pd.read_csv(caminho_do_arquivo, sep=';')
+
     print("Construindo dicionário AVL...")
-    for palavra in palavras:
-        dicionario_avl.insert(palavra)
+    for indice, linha in palavras.iterrows():
+        if pd.notna(linha['palavra']):
+           dicionario_avl.insert(linha['palavra'], linha['significado'])
     print("Dicionário construído com sucesso!")
     print("-" * 30)
 
@@ -144,3 +144,4 @@ if __name__ == "__main__":
         else:
             print("Nenhuma sugestão encontrada.")
         print("-" * 30)
+
