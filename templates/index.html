@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário com Autocomplete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Dicionário Inteligente</h1>
+        <p>Encontre o significado das palavras com a ajuda da nossa árvore AVL.</p>
+
+        <div class="search-wrapper">
+            <input type="text" id="search-box" placeholder="Digite uma palavra..." autocomplete="off">
+            <div id="suggestions-container"></div>
+        </div>
+
+        <div id="meaning-display"></div>
+
+    </div>
+
+    <script>
+        const searchBox = document.getElementById('search-box');
+        const suggestionsContainer = document.getElementById('suggestions-container');
+        const meaningDisplay = document.getElementById('meaning-display');
+
+        searchBox.addEventListener('input', async () => {
+            const prefix = searchBox.value.trim();
+            suggestionsContainer.innerHTML = '';
+
+            if (prefix.length === 0) {
+                meaningDisplay.innerHTML = '';
+                return;
+            }
+
+            try {
+                const response = await fetch(`/suggest?prefix=${prefix}`);
+                const suggestions = await response.json();
+
+                if (Array.isArray(suggestions) && suggestions.length > 0) {
+                    suggestions.forEach(suggestion => {
+                        const suggestionDiv = document.createElement('div');
+                        suggestionDiv.classList.add('suggestion-item');
+                        suggestionDiv.textContent = suggestion.palavra;
+
+                        suggestionDiv.addEventListener('click', () => {
+                            searchBox.value = suggestion.palavra;
+                            suggestionsContainer.innerHTML = '';
+                            meaningDisplay.innerHTML = `
+                                <strong>${suggestion.palavra}</strong>
+                                <p>${suggestion.significado}</p>
+                            `;
+                        });
+
+                        suggestionsContainer.appendChild(suggestionDiv);
+                    });
+                }
+            } catch (error) {
+                console.error('Erro na requisição fetch:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

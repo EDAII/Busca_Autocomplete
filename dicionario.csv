@@ -1,0 +1,29 @@
+palavra;significado
+algoritmo;Uma sequência de instruções ou regras definidas para resolver um problema.
+algebra;Ramo da matemática que usa símbolos e letras para representar números e quantidades em equações.
+ambiente;O conjunto de condições ou influências que cercam e afetam um organismo ou sistema.
+aplicativo;Um programa de software projetado para executar uma função específica diretamente para o usuário.
+arvore;Estrutura de dados não linear que simula uma hierarquia, consistindo em nós conectados por arestas.
+balanceada;Refere-se a uma árvore de busca onde as alturas das sub-árvores de cada nó diferem por no máximo um.
+banco;Uma coleção organizada de dados, geralmente armazenada e acessada eletronicamente de um sistema de computador.
+binaria;Relativo a um sistema de numeração que usa apenas dois dígitos, 0 e 1.
+busca;O processo de encontrar um item com propriedades específicas entre uma coleção de itens.
+codigo;Um sistema de regras para converter informações — como uma letra, palavra ou frase — em outra forma.
+compilador;Programa que traduz o código-fonte escrito em uma linguagem de programação para uma linguagem de máquina.
+computador;Dispositivo eletrônico que processa dados e os converte em informações úteis.
+dado;Uma representação de fatos, conceitos ou instruções de uma maneira formalizada, adequada para processamento.
+estrutura;A organização e inter-relação de partes em um sistema ou objeto complexo.
+funcao;Um bloco de código organizado e reutilizável que é usado para executar uma única ação relacionada.
+hardware;Os componentes físicos de um sistema de computador, como o processador, memória e dispositivos de entrada/saída.
+interface;Um ponto onde dois sistemas, sujeitos, organizações, etc., se encontram e interagem.
+java;Linguagem de programação popular, orientada a objetos, usada para desenvolvimento web, móvel e de software.
+javascript;Linguagem de programação de alto nível, usada principalmente para criar interatividade em páginas web.
+logica;O estudo do raciocínio e da inferência, ou um método particular de raciocínio.
+memoria;Componente do computador que armazena dados e instruções para processamento.
+processador;O componente de um computador que executa as instruções de um programa.
+programa;Uma coleção de instruções que executa uma tarefa específica quando executada por um computador.
+python;Linguagem de programação de alto nível, interpretada, conhecida por sua sintaxe clara e legibilidade.
+rede;Um conjunto de computadores e dispositivos conectados que podem compartilhar recursos e dados.
+servidor;Um computador ou sistema que fornece recursos, dados, serviços ou programas para outros computadores.
+sistema;Um conjunto de componentes interconectados que formam um todo complexo.
+software;O conjunto de programas, dados e instruções que dizem a um computador como funcionar.
