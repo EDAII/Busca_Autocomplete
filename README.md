@@ -57,3 +57,6 @@ Para desenvolver o projeto, foi escolhida a Árvore AVL como a estrutura de dado
 ## Outros
 Para adicionar novos itens ao dicionário, é necessário atualizar os dados que servem como a fonte de informação para a análise. Assim, é possível cadastrar um novo termo e seu significado adicionando-os no arquivo ``dicionario.csv`` para que o sistema possa reconhecer, analisar e exibir o novo termo na interface.
 
+## Gravação 
+
+[Link da gravação](https://www.youtube.com/watch?v=ztO6GAjfO_s)
